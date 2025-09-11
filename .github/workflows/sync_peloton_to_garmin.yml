@@ -35,7 +35,10 @@ jobs:
         DEFAULT_WORKOUT_NUM: 5
       run: |
         cat <<EOT > /app/configuration.local.json 
-        {
+        { 
+           "Developer": {
+             "UserAgent": "GCM-iOS-5.7.2.1"
+             }
           "App": {
             "EnablePolling": false,
             "CheckForUpdates": true,
@@ -93,4 +96,5 @@ jobs:
         name: output
         path: ${{ env.OUTPUT_DIR }}
         if-no-files-found: error
+
 
